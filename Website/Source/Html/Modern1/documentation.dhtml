@@ -22,7 +22,7 @@
 
                         <!-- The issue with HTML -->
                         <h2>The issue with HTML</h2>
-                        <p>The issue with doing plain HTML is that is not your final format. Plain HTML cannot have
+                        <p>The issue with doing plain HTML is that it is not your final format. Plain HTML cannot have
                             shared headers and footers that are the same throughout pages. It cannot have variables,
                             multiple outputs, multiple formats or anything else.</p>
                         <p>Changing the header of one page, you need to change the header of all other pages, manually,
@@ -65,7 +65,7 @@
                         <!-- Outputs -->
                         <h2>Outputs</h2>
                         <p>By default if your file is called index.dhtml then the output file will be in the same
-                            directory called index.html. (<a href="#configuring-dnaweb">unless a Html Output Path is
+                            directory called index.html. (<a href="#configuring-dnaweb">unless an Html Output Path is
                                 specified in a configuration
                                 file</a>)</p>
                         <p>To modify the output filename and path (relative to the input file), in your dnaweb file
@@ -120,8 +120,8 @@ $--&gt;
 &lt;/html&gt;</pre>
 
                         <p>To create variables, first start a special code block comment using
-                            <mark>&lt;!--$</mark> and ending with <mark>$--&gt;</mark>. Inside that place the <Data></Data>
-                            tag just like a HTML tag. </p>
+                            <mark>&lt;!--$</mark> and ending with <mark>$--&gt;</mark>. Inside that, place the <Data></Data>
+                            tag just like an HTML tag. </p>
 
                         <p>Inside the data element you can now create variables with names and values just like any
                             XML/HTML element.</p>
@@ -131,8 +131,8 @@ $--&gt;
 
                         <!-- Dna Variables -->
                         <h2>Dna Variables</h2>
-                        <p>As well as defining variables yourself, DnaWeb has a bunch of in-built useful variables, you
-                            use in just the same way with the prefix <mark>dna</mark>.</p>
+                        <p>As well as defining variables yourself, DnaWeb has a bunch of useful built-in variables. You
+                            use them in the same way with the prefix <mark>dna</mark>.</p>
 
                         <table>
                             <tbody>
@@ -225,12 +225,11 @@ $--&gt;
   &lt;h1&gt;Header&lt;/h1&gt;
 &lt;!--&#64; include footer:wrapped &#64;--&gt;</pre>
 
-                        <p>As you can see by specifying a profile named <mark>wrapped</mark> then setting the
-                            index.html output to
-                            use that profile, and the includes for the header and footer to only include the files for
-                            the profile <mark>wrapped</mark> we end up with just the header <mark>&lt;h1&gt;</mark> in
-                            the .cshtml file but the
-                            complete file for the .html file.</p>
+                        <p>As you can see, by specifying a profile named <mark>wrapped</mark>, and then setting the
+                            index.html output to use that profile. We're including both the header and footer in the
+                            <mark>wrapped</mark> profile, so we'll end up with the complete .html file. Whereas we 
+                            only end up with the header <mark>&lt;h1&gt;</mark> in the .cshtml file.
+                        </p>                        
 
                         <!-- Inline Data -->
                         <h2>Inline Data</h2>
@@ -333,7 +332,7 @@ $--&gt;</pre>
 
 
                         <p>Then let’s generate a C# file that can be included in our ASP.Net project to give us access
-                            to the exact same variables are are used in the cshtml file:</p>
+                            to the exact same variables that are used in the cshtml file:</p>
 
                         <!-- Codefile -->
                         <h3>codefile.cs</h3>
@@ -355,7 +354,7 @@ namespace SomeNamespace
                             <mark>SharedVariables</mark>.</p>
 
                         <p>The variables will be generated as public properties of the correct type (string, boolean,
-                            int etc..).</p>
+                            int, etc..).</p>
 
                         <p>The comments for the properties will come from the comments specified in the variables file.</p>
 
@@ -391,8 +390,8 @@ namespace SomeNamespace
                             location.</p>
 
                         <p>For example, the <strong>Examples</strong> folder in this repository has a folder called
-                            <mark>09 - LiveServer</mark> and inside it the DnaWeb source files are there. The
-                            <mark>dna.config</mark> file specfies that the output (html) files go to <mark>../Outputs/09</mark>
+                            <mark>09 - LiveServer</mark> and you'll find the DnaWeb source files inside. The
+                            <mark>dna.config</mark> file specifies that the output (html) files go to <mark>../Outputs/09</mark>
                             folder, and so we also set up a Live Server to that folder
                             too.</p>
 
@@ -402,7 +401,7 @@ namespace SomeNamespace
     "liveServers": [ "../Outputs/09" ]
 }</pre>
 
-                        <p>Now just start DnaWeb in your source folder and a Live Server will be created and your
+                        <p>Now just start DnaWeb in your source folder and a Live Server will be created with your
                             browser automatically opened to the new server address, along with the <mark>index.html</mark>
                             file in the <mark>Outputs/09</mark> folder being served by default.</p>
 
@@ -410,12 +409,12 @@ namespace SomeNamespace
 
                         <p>If you then typed in <strong>http://localhost:51767/about</strong> for example it would
                             attempt to find and
-                            load a html file in <mark>Outputs/09</mark> called <mark>about.htm</mark> (or .html). </p>
+                            load an html file in <mark>Outputs/09</mark> called <mark>about.htm</mark> (or .html). </p>
 
                         <p>Any other requests such as <strong>http://localhost:51767/Assets/Css/style.css</strong> will
                             then look for <mark>Outputs/09/Assets/Css/style.css</mark> and serve that.</p>
 
-                        <p>Mime types will be honoured, and the server will server the files length, date, modified
+                        <p>Mime types will be honoured, and the server will serve the files length, date, modified
                             date and so on.</p>
 
                         <p>Go ahead and edit a .dhtml file, a .scss file or even a file directly in the output folder
@@ -430,7 +429,7 @@ namespace SomeNamespace
                             rapid workflow.</p>
 
                         <p>The source folder contains a <strong>readme.md</strong> file explaining the Live Data
-                            source, what who made
+                            source, who made
                             it, what's inside and general information.</p>
 
                         <h2>Live Variables</h2>
@@ -500,7 +499,7 @@ namespace SomeNamespace
                         <p>Sometimes you have static files that should be in your websites root, such as images,
                             pre-compiled JavaScript libraries, font files and so on.</p>
 
-                        <p>Instead of having them in the output folder tpyically called WebRoot along with mostly
+                        <p>Instead of having them in the output folder typically called WebRoot along with mostly
                             compiled/generated files, making it an ugly mix folder between generated files and static
                             files, you can create a <strong>Static Folder</strong> anywhere you like and configure it
                             to output to a specific location in your web root.</p>
@@ -518,7 +517,7 @@ namespace SomeNamespace
                             compile an msi file. The output of the compile will be in a folder inside <strong>Dna.Web.Installer</strong>
                             called Installs</p>
 
-                        <q>Alternatively download a pre-made version from <a href="$$Urls.Download$$">here</a></q>
+                        <q>Alternatively download a pre-made version <a href="$$Urls.Download$$">here</a></q>
 
                         <p>Once installed on your system, DnaWeb will be a self-contained .Net Core application in your
                             Program Files folder under DnaWeb. </p>
@@ -540,9 +539,9 @@ namespace SomeNamespace
                         <p>This simply finds the self-contained DnaWeb.exe file located in the <strong>Program Files</strong>
                             installation folder, then runs DnaWeb.</p>
 
-                        <p>DnaWeb will first load the default configuration file from the install folder, and then look
-                            in the executing folder (where you ran dnaweb from command line) for a configuration file
-                            also, and load in your custom project settings. Finally it will check any command line
+                        <p>DnaWeb will first load the default configuration file from the install folder. After that it'll look
+                            in the executing folder (where you ran dnaweb from the command line) for a configuration file, 
+                            and load in your custom project settings. Finally it will check any command line
                             arguments and load those. That is also the order of precedence so the arguments override
                             the project folders configuration which overrides the default configuration. </p>
 
@@ -572,12 +571,12 @@ namespace SomeNamespace
                         <h1>Compiling DnaWeb</h1>
 
                         <p>Open up the Source folder, then the <strong>Dna.Web.sln</strong> solution file. With Visual
-                            Studio open make sure <strong>Dna.Web.CommandLine</strong> is set as the startup project.
+                            Studio open, make sure <strong>Dna.Web.CommandLine</strong> is set as the startup project.
                             If not right click <strong>Dna.Web.CommandLine</strong> and select Set as Startup Project.</p>
 
                         <p>Now press <strong>F5</strong> to run the engine. This will run the engine, opening a command
-                            line window that
-                            should output where it is listening for file changes and state <strong>Press enter to stop</strong>.</p>
+                            line window that should output where it is listening for file changes and state.
+                            <strong>Press enter to stop</strong>.</p>
 
                         <p>By default the engine looks in the folder it is run in, so from Visual Studio that is the
                             <strong>Dna.Web.CommandLine</strong> folder. </p>
@@ -739,7 +738,7 @@ namespace SomeNamespace
                             folders override any settings specified in a parent folders configuration file.</q>
 
                         <p>The Visual Studio project has a debug argument set to <strong>monitor=../../Examples</strong>
-                            so that when debugging it monitors the Examples folder of the solution.</p>
+                            so that when you're debugging, it monitors the Examples folder of the solution.</p>
 
                         <p>Now with the engine running, edit any file in the Examples folder and the console will
                             detect the change and automatically process the files and generate the outputs. All details
@@ -747,7 +746,7 @@ namespace SomeNamespace
 
                         <p>The typical work-cycle when using DnaWeb is to start the engine up prior to working,
                             then work with your DnaWeb files as required, meaning any edits to those files will
-                            auto-generate your HTML/C#/Sass files <mark>instantly..!</mark></p>
+                            auto-generate your HTML/C#/Sass files <mark>instantly!</mark></p>
 
                     </header>
                 </div>
